@@ -1,0 +1,81 @@
+/* 
+	ARCHIVO DE PRUEBAS 
+	CON COMENTARIOS
+*/
+
+
+--- CREAR BASE DE DATOS
+CrearBD temp1 = nueva CrearBD();
+
+--- ELIMINAR BASE DE DATOS
+EliminarBD temp1 = nueva EliminarBD();
+
+/* 
+	BASE DE DATOS DE  LITERATURAS
+*/
+
+--- CREAR BASE DE DATOS
+CrearBD temp = nueva CrearBD();
+
+--- CREAR COLECCION DE LITERATURAS
+CrearColeccion colec = nueva CrearColeccion("literaturas");
+
+--- CREAR COLECCION TEMPORAL
+CrearColeccion colec = nueva CrearColeccion("colectemp");
+
+--- ELIMINAR COLECCION TEMPORAL
+EliminarColeccion eliminacolec = nueva EliminarColeccion("colectemp");
+
+/* 
+	INSERTAR DATOS
+*/
+InsertarUnico insert1 = nueva InsertarUnico("literaturas" ,
+"
+{
+ "nombre" : "Obra Literaria",
+ "autor" : "Jorge Luis"
+ }
+");
+
+InsertarUnico insert2 = nueva InsertarUnico("literaturas" ,
+"
+{
+ "nombre" : "El Principito",
+ "autor" : "Antoine de Saint"
+ }
+");
+
+InsertarUnico insert3 = nueva InsertarUnico("literaturas" ,
+"
+{
+ "nombre" : "Moldavita. Un Visitante Amigable",
+ "autor" : "Norma Muñoz Ledo"
+ }
+");
+
+--- ACTUALIZAR DATO DE COLECCION LITERATURA
+ActualizarUnico actualizadoc = nueva ActualizarUnico("literaturas",
+"
+{
+ "nombre" : "Obra Literaria"
+},
+{
+ $set: {"autor" : "Mario Vargas"}
+}
+");
+
+--- ELIMINAR DATO DE LA COLECCION LITERATURA
+EliminarUnico eliminadoc = nueva EliminarUnico("literaturas",
+"
+{
+ "nombre" : "Obra Literaria"
+}
+");
+
+--- BUSCAR TODOS LOS DATOS DE LA COLECCION
+BuscarTodo todo = nueva BuscarTodo ("literaturas");
+
+--- BUSCAR UN DATO POR COLECCION
+BuscarUnico todo = nueva BuscarUnico ("literaturas");
+
+
